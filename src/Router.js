@@ -9,7 +9,12 @@ export default class Router {
 		this.#menuNavigation = element;
 		//set listener pour faire la navigation par le router et non par le browser
 	}
-
+	/**
+	 * Realise la navigation au sein de notre application en montant les pages dans le contenant Router.sectionHTMLContent
+	 * Realise aussi le changement du nom de l'onglet et effectue l'ajout d'une entre dans l'historique de navigation.
+	 * @param {string} path
+	 * @param {boolean} pushState
+	 */
 	static navigate(path, pushState = true) {
 		const route = this.routes.find(route => route.pathMatcher.test(path));
 		if (route) {
@@ -28,6 +33,12 @@ export default class Router {
 		}
 	}
 
+	/**
+	 * Initiliase le router en mettant en place le contenant des pages ainsi que le menu de notre SPA.
+	 * Initialise aussi les evenement de deepLinking pour l'application
+	 * @param {HTMLElement} sectionContent
+	 * @param {HTMLElement} menuNav
+	 */
 	static initRouter(sectionContent, menuNav) {
 		this.sectionHTMLContent = sectionContent;
 		this.menuNav = menuNav;

@@ -15,6 +15,19 @@ export class HomePage extends Page {
 	mount(element) {
 		super.mount(element);
 		console.log('hello from homePage');
+
+		// Recuperer tout les 20 premieres ressources de /games
+		HomePage.gameResources.getAll().then(rep => console.log(rep));
+
+		// Recuperer tout la ressources de /games/cyberpunk-2077
+		HomePage.gameResources
+			.getOne('cyberpunk-2077')
+			.then(rep => console.log(rep));
+
+		// Recuperer un tableau de ressources correspondant au id passer en parametres
+		HomePage.gameResources
+			.getManyById(['cyberpunk-2077', 'fall-guys'])
+			.then(rep => console.log(rep));
 		// recupere les ressources avec addRessources
 		// .then(
 		// pour chaque ressource dans currentResources correspondant a lastPageFetch -1
