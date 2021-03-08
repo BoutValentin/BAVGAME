@@ -33,7 +33,7 @@ export class Favorites {
 			this.favorites = [...this.#favorites, id];
 			new CustomEvent('favoris', {
 				detail: {
-					type: 'add',
+					add: true,
 					FavId: id,
 				},
 			});
@@ -52,7 +52,7 @@ export class Favorites {
 			this.favorites = [...favC];
 			new CustomEvent('favoris', {
 				detail: {
-					type: 'remove',
+					add: false,
 					FavId: id,
 				},
 			});
