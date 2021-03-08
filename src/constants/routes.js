@@ -6,6 +6,9 @@ import {
 	NotFoundPage,
 } from '../pages';
 
+/**
+ * Tableau regroupant tout nos routes auquel peut repondre notre application.
+ */
 export const routes = [
 	{
 		page: new HomePage(),
