@@ -19,4 +19,8 @@ export class Page extends Component {
 	mount(element) {
 		this.element = element;
 	}
+
+	unmount() {
+		return;
+	}
 }

@@ -12,19 +12,19 @@ import {
 export const routes = [
 	{
 		page: new HomePage(),
-		pathMatcher: new RegExp(/^\/$/, 'g'),
+		pathMatcher: new RegExp(/^\/$/, ''),
 	},
 	{
 		page: new DetailGamePage(),
-		pathMatcher: new RegExp(/^\/detail-([A-z0-9-])+$/, 'g'),
+		pathMatcher: new RegExp(/^\/detail-([A-z0-9-])+$/, ''),
 	},
 	{
 		page: new FavoritesPage(),
-		pathMatcher: new RegExp(/^\/mes-favoris$/, 'g'),
+		pathMatcher: new RegExp(/^\/mes-favoris$/, ''),
 	},
 	{
 		page: new TeamPage(),
-		pathMatcher: new RegExp(/^\/lequipe.fr$/, 'g'),
+		pathMatcher: new RegExp(/^\/lequipe.fr$/, ''),
 	},
 	{
 		page: new NotFoundPage(),

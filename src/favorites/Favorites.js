@@ -29,14 +29,16 @@ export class Favorites {
 	 * @param {string|number} id
 	 */
 	static addToFavorites(id) {
-		if (!this.#favorites.includes(id)) {
+		if (!this.favorites.includes(id)) {
 			this.favorites = [...this.#favorites, id];
-			new CustomEvent('favoris', {
-				detail: {
-					add: true,
-					FavId: id,
-				},
-			});
+			window.dispatchEvent(
+				new CustomEvent('favoris', {
+					detail: {
+						add: true,
+						FavId: id,
+					},
+				})
+			);
 		}
 	}
 
@@ -45,17 +47,25 @@ export class Favorites {
 	 * @param {string|number} id
 	 */
 	static removeToFavorites(id) {
-		const pos = this.#favorites.indexOf(id);
+		const pos = this.favorites.indexOf(id);
 		if (pos >= 0) {
 			const favC = [...this.favorites];
 			favC.splice(pos, 1);
 			this.favorites = [...favC];
-			new CustomEvent('favoris', {
-				detail: {
-					add: false,
-					FavId: id,
-				},
-			});
+			window.dispatchEvent(
+				new CustomEvent('favoris', {
+					detail: {
+						add: false,
+						FavId: id,
+					},
+				})
+			);
 		}
+	}
+
+	static isInFavorites(id) {
+		if (!this.favorites) return false;
+		const pos = this.#favorites.indexOf(id);
+		return pos >= 0;
 	}
 }

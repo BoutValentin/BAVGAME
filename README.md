@@ -47,29 +47,30 @@ Voici une liste des taches a faire afin de les effectuer:
 >    - Dans chaque dossier contenant du js creer un fichier ```index.js``` ce fichier permet d'importer en utilisant directement le nom du dossier. Ce fichier doit exporter tout ce qui est contenu dans le dossier. plusieurs exemple sont disponible dans le projet [ici](./src/components/global/index.js) ou encore [ici](./src/pages/index.js)  
 > - Certaine tache on des chose en commun: comme la creation d'un composant CardGame commun aux favoris et a la homePage 
 - [ ] **General**:
-   - [ ] Dans la class page, ajouter une fonction unmount se desabonnant des event 
-   - [ ] Ajouter dans le router un attribut currentPage
-      - [ ] a l'appel de navigate: unMount la precedente page si elle existe
-      - [ ] apres l'appel du mount: update la currentPage avec celle demander
-   - [ ] Creation d'un dossier Game dans le dossier : ```./src/components/```
-   - [ ] Suppresion du dossier gameCard et de son contenu
+   - [x] Dans la class page, ajouter une fonction unmount se desabonnant des event 
+   - [x] Ajouter dans le router un attribut currentPage
+      - [x] a l'appel de navigate: unMount la precedente page si elle existe
+      - [x] apres l'appel du mount: update la currentPage avec celle demander
+   - [x] Creation d'un dossier Game dans le dossier : ```./src/components/```
+   - [x] Suppresion du dossier gameCard et de son contenu
    - [ ] Creation du **header** commun a tout nos pages de nos applications dans le fichier ```./index.html``` et son css associes dans le fichier ```./css/header.css```
    - [ ] Creation du **footer** commun a tout nos pages de nos applications dans le fichier ```./index.html``` et son css associes dans le fichier ```./css/footer.css```
    - [ ] Mise a jour du ReadMe au fil de la Realisation des Taches
    - [ ] CleanUp a la fin des console.log etc...
 - [ ] **La page d'acceuil**:
-   - [ ] Commencons par creer un composant GameCard
-      - [ ] Creation d'un dossier Game dans le dossier : ```./src/components/```
-      - [ ] Creation du fichier ```GameCard.js``` dans le dossier : ```./src/components/```
-      - [ ] dans ce fichier, creation d'une class GameCard heritant de ```./src/global/Component.js```. Cette class aura un constructor et des attributs definissant tout ce qui faut pour l'appel a super mais surtout demande tout les donness necessaire [voir](https://gitlab.univ-lille.fr/js/projet-2021#c1-page-daccueil-liste-des-jeux)
-      - [ ] Ne pas hesitez a faire des sous composants en array dans l'attribut children
-      - [ ] definir le css dans le fichier ```./css/main.css```
-   - [ ] Recuperer les 20 premieres resources
+   - [x] Commencons par creer un composant GameCard
+      - [x] Creation d'un dossier Game dans le dossier : ```./src/components/```
+      - [x] Creation du fichier ```GameCard.js``` dans le dossier : ```./src/components/```
+      - [x] dans ce fichier, creation d'une class GameCard heritant de ```./src/global/Component.js```. Cette class aura un constructor et des attributs definissant tout ce qui faut pour l'appel a super mais surtout demande tout les donness necessaire [voir](https://gitlab.univ-lille.fr/js/projet-2021#c1-page-daccueil-liste-des-jeux)
+      - [x] Ne pas hesitez a faire des sous composants en array dans l'attribut children
+      - [x] definir le css dans le fichier ```./css/main.css```
+   - [x] Recuperer les 20 premieres resources
    ```js
 
    ```
-   - [ ] Ajouter le systeme de query
-   - [ ] handle l'ajout des ressources
+   - [x] Ajouter le systeme de query
+   - [x] handle l'ajout des ressources
+   - [ ] styling the HomePage
 - [ ] **La page Detailler d'un jeu**:
    - [ ] Cette page fait reference au fichier [DetailGamePage.js](./src/pages/DetailGamePage.js)
    - [ ] Pour tester cette page, rendez vous a l'adresse [http://localhost:8000/detail-cyberpunk-2077](http://localhost:8000/detail-cyberpunk-2077)

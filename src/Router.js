@@ -4,6 +4,7 @@ export default class Router {
 	static routes = routes;
 	static sectionHTMLContent;
 	static #menuNavigation;
+	static currentPage;
 
 	static set menuNavigation(element) {
 		this.#menuNavigation = element;
@@ -17,8 +18,13 @@ export default class Router {
 	 */
 	static navigate(path, pushState = true) {
 		const route = this.routes.find(route => route.pathMatcher.test(path));
+
 		if (route) {
+			if (this.currentPage) {
+				this.currentPage.unmount();
+			}
 			route.page.mount(this.sectionHTMLContent);
+			this.currentPage = route.page;
 			// Changer le titre sur longlet par celui de la page
 			document.querySelector('head title').innerText = route.page.pageTitle;
 			// TODO: ajouter les liens active
@@ -42,7 +48,12 @@ export default class Router {
 	static initRouter(sectionContent, menuNav) {
 		this.sectionHTMLContent = sectionContent;
 		this.menuNav = menuNav;
-
+		document.querySelectorAll('a').forEach(node =>
+			node.addEventListener('click', e => {
+				e.preventDefault();
+				this.navigate(e.target.getAttribute('href'));
+			})
+		);
 		const handleBack = EPopState => {
 			Router.navigate(EPopState.state.path);
 		};
