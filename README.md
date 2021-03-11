@@ -102,11 +102,11 @@ Voici une liste des taches a faire afin de les effectuer:
          this.element.innerHTML = this.render();
       }
    ```
-- [ ] **La page des Favoris**:
-   - [ ] Cette page fait reference au fichier [FavoritesPage.js](./src/pages/FavoritesPage.js)
-   - [ ] Pour tester cette page, rendez vous a l'adresse [http://localhost:8000/mes-favoris](http://localhost:8000/mes-favoris)
-   - [ ] la class ```Favorites``` est une class a utilisation static comprenant un tableau d'id de jeux. Cette class permet d'ajouter et d'enlever des jeux de nos favoris et de les stocker en localstorage.
-   - [ ] definisser une function ```handleFavorisListener``` en methode de la page
+- [x] **La page des Favoris**:
+   - [x] Cette page fait reference au fichier [FavoritesPage.js](./src/pages/FavoritesPage.js)
+   - [x] Pour tester cette page, rendez vous a l'adresse [http://localhost:8000/mes-favoris](http://localhost:8000/mes-favoris)
+   - [x] la class ```Favorites``` est une class a utilisation static comprenant un tableau d'id de jeux. Cette class permet d'ajouter et d'enlever des jeux de nos favoris et de les stocker en localstorage.
+   - [x] definisser une function ```handleFavorisListener``` en methode de la page
    ```js 
    handleFavorisListener(event) {
       if (!event.detail.add){
@@ -115,7 +115,7 @@ Voici une liste des taches a faire afin de les effectuer:
          }
    }
    ```
-   - [ ] Dans la methode ```mount``` de la page, ajouter un evenement listener sur l'evenement custom ```favoris``` qui retire du dom la carte de jeu ayant l'ide retirer
+   - [x] Dans la methode ```mount``` de la page, ajouter un evenement listener sur l'evenement custom ```favoris``` qui retire du dom la carte de jeu ayant l'ide retirer
    ```js
    mount(element) {
       .
@@ -123,13 +123,13 @@ Voici une liste des taches a faire afin de les effectuer:
       .
       windows.addEventListener('favoris', handleFavorisListener)
    ```
-   - [ ] Creer une fonction unMount qui se desabonne du listener
+   - [x] Creer une fonction unMount qui se desabonne du listener
    ```js
    unMount(){
       windows.removeEventListener('favoris', handleFavorisListener)
    }
    ```
-   - [ ] Commencons par recupere la list des jeux en favoris dans la fonction ```mount```
+   - [x] Commencons par recupere la list des jeux en favoris dans la fonction ```mount```
    ```js
    mount(element) {
       .
@@ -138,12 +138,12 @@ Voici une liste des taches a faire afin de les effectuer:
       const favorites = Favorites.favorites;
    }
    ```
-   - [ ] Recuperons tout les details du jeu en effectuans une requetes avec l'attribut ```GameRessources``` de la page
+   - [x] Recuperons tout les details du jeu en effectuans une requetes avec l'attribut ```GameRessources``` de la page
    ```js
    FavoritesPage..gameResources
 			.getManyById(favorites).then(allGames=>console.log(allGames))
    ``` 
-   - [ ] Dans le .then, parcouris chaque element 
+   - [x] Dans le .then, parcouris chaque element 
    ```js
    .then(allGames=>{
       this.children = allGames.map((game, index)=>{
@@ -153,7 +153,7 @@ Voici une liste des taches a faire afin de les effectuer:
       this.element.innerHTML = this.render();
    })
    ```
-   - [ ] Ne pas oublier de definir le composant ErrorGameCard, affichan un message d'erreur en cas de probleme
+   - [x] Ne pas oublier de definir le composant ErrorGameCard, affichant un message d'erreur en cas de problème
 - [ ] **Page l'equipe**:
    - [ ] Cette page fait reference au fichier [TeamPage.js](./src/pages/TeamPage.js)
    - [ ] Pour tester cette page, rendez vous a l'adresse [http://localhost:8000/lequipe.fr](http://localhost:8000/lequipe.fr)

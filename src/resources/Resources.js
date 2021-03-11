@@ -32,6 +32,7 @@ export class Resources {
 			return response.status >= 400
 				? {
 						error: {
+							slug: id,
 							statusCode: response.status,
 							detail: oneResources?.detail,
 						},
@@ -81,10 +82,11 @@ export class Resources {
 				ids.map(id => fetch(`${API_URL}${this.entrypoint}/${id}?${query}`))
 			);
 			const allResources = await Promise.all(
-				responses.map(async response =>
+				responses.map(async (response, index) =>
 					response.status >= 400
 						? {
 								error: {
+									slug: ids[index],
 									statusCode: response.status,
 									detail: (await response.json())?.detail,
 								},
