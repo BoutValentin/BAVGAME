@@ -1,3 +1,4 @@
+import { Query } from '../query';
 import { Resources } from './Resources';
 
 /**
@@ -22,7 +23,20 @@ export class GameResources extends Resources {
 	 * @return {Promise<Object>}
 	 */
 	async getOne(id) {
-		return await super.getOne(id, this.query.getStringQuery());
+		const game = await super.getOne(id, this.query.getStringQuery());
+		if (game.error) return game;
+		const query = new Query();
+		query.addOneParameter('page_size', game.screenshots_count, true);
+		query.removeOneParameter('metacritic');
+		query.removeOneParameter('dates');
+		query.removeOneParameter('pages');
+		console.log(query);
+
+		const screenshots = await new Resources(
+			`${this.entrypoint}/${id}/screenshots`
+		).getAll(query.getStringQuery());
+
+		return { ...game, screenshots: screenshots?.results || [] };
 	}
 
 	/**

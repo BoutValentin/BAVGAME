@@ -8,7 +8,7 @@
 
 div[class*=' genres-'], div[class^='genres-'] {
     color: black;
-    background-color: rgba(255, 35, 35, 0.486);
+    background-color: var(--genre-default);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -20,7 +20,7 @@ div[class*=' genres-'], div[class^='genres-'] {
 
 div[class*=' genres-'] > .genres__rounded, div[class^='genres-'] > .genres__rounded {
     color: black;
-    background-color: red;
+    background-color: var(--genre-default-2);;
     height: 8px;
     width: 8px;
     border-radius: 50%;

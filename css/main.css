@@ -5,62 +5,65 @@
     --main-accent-dark-color: #383856;
     --main-accent-red-color: #A4303F;
     --main-accent-green-color: #678d58;
+    
+    --genre-default: #fd9394;
+    --genre-default-2: #ff0004;
 
-    --genre-action:  #ff4f6683 ;
+    --genre-action:  #fda2b0 ;
     --genre-action-2: #A4303F ;
 
-    --genre-indie: #ffd44681 ;
+    --genre-indie: #fde7a1 ;
     --genre-indie-2: #ffd33f;
 
-    --genre-adventure: #abf0f07c;
+    --genre-adventure: #d4f7f8;
     --genre-adventure-2:#91CECE ;
 
-    --genres-role-playing-games-rpg: #fab15283 ;
+    --genres-role-playing-games-rpg: #fad5a6 ;
     --genres-role-playing-games-rpg-2: #FFAC3E ;
 
-    --genre-strategy: #678d587e ;
+    --genre-strategy: #b2c5ac ;
     --genre-strategy-2: #678d58 ;
 
-    --genre-shooter: #ff782f81 ;
+    --genre-shooter: #fdb895 ;
     --genre-shooter-2: #F3722C;
 
-    --genre-casual: #54d1ab80;
+    --genre-casual: #a7e6d5;
     --genre-casual-2: #43AA8B;
 
-    --genre-simulation: #98527781;
+    --genre-simulation: #c9a5ba;
     --genre-simulation-2: #985277;
 
-    --genre-puzzle: #90be6d7c ;
+    --genre-puzzle: #c7deb8 ;
     --genre-puzzle-2: #90BE6D;
 
-    --genre-arcade: #f9844a80 ;
+    --genre-arcade: #fabfa4 ;
     --genre-arcade-2: #F9844A;
 
-    --genre-platformer: #4d908e7e ;
+    --genre-platformer: #a5c7c7 ;
     --genre-platformer-2: #4D908E;
 
-    --genre-racing: #5775907a;
+    --genre-racing: #acbcca;
     --genre-racing-2: #577590 ;
 
-    --genre-sports: #fc942480 ;
+    --genre-sports: #fbc791 ;
     --genre-sports-2: #ff8200  ;
 
-    --genre-massively-multiplayer: #5775907a ;
+    --genre-massively-multiplayer: #acbcca ;
     --genre-massively-multiplayer-2: #577590;
 
-    --genre-fighting: #b23a487e ;
+    --genre-fighting: #d79ca4 ;
     --genre-fighting-2: #b23a48;
 
-    --genre-family: #f4d58d80;
+    --genre-family: #f7e8c6;
     --genre-family-2: #f4d58d ;
 
-    --genre-board-games: #fcb1a67c;
+    --genre-board-games: #fcd8d4;
     --genre-board-games-2: #fcb1a6;
 
-    --genre-educational: #07beb880;
+    --genre-educational: #80dcdb;
     --genre-educational-2: #07beb8;
 
-    --genre-card: #00a89780 ;
+    --genre-card: #7dd1cb;
     --genre-card-2: #00a896;
 
 }
