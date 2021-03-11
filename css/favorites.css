@@ -41,7 +41,7 @@
     position: relative;
 }
 
-#returnHomePage::before{
+#returnHomePage::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -55,7 +55,7 @@
     transition: all 0.3s ease-in-out;
 }
 
-#returnHomePage:hover::before{
+#returnHomePage:hover::before {
     visibility: visible;
     transform: scaleX(0.8);
 }
