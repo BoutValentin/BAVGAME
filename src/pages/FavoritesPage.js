@@ -12,7 +12,7 @@ export class FavoritesPage extends Page {
 	mount(element) {
 		super.mount(element);
 		console.log('hello from favoritesPage');
-
+		this.element.innerHTML = 'favoris';
 		// recupere la liste des favoris avec Favorites.favorites
 		// creation de l'array a composant
 		// si on a une liste vide de favoris this.children = new EmptyFavoritesListe()

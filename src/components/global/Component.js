@@ -34,7 +34,7 @@ export class Component {
 	}
 
 	attributeFromObject({ name, value }) {
-		return `${name}=${value}`;
+		return `${name}="${value}" `;
 	}
 
 	renderChildren() {
@@ -44,6 +44,9 @@ export class Component {
 					html + (child instanceof Component ? child.render() : child),
 				''
 			);
+		}
+		if (this.children instanceof Component) {
+			return this.children.render();
 		}
 		return this.children || '';
 	}

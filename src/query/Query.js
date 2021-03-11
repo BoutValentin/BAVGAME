@@ -77,7 +77,30 @@ export class Query {
 			return;
 		}
 	}
-
+	/**
+	 * Test si un parametre est present dans l'obet query
+	 * Son comportement par default, si aucun parametre 'parameter' n'est passer , est de retourner complement la clef de la query
+	 * Si le parametre 'parameter' est donne et que la clef donner correspond a un Array, alors seul ce parametre sera retourner
+	 * @param {string} key
+	 * @param {string|number} parameter default null
+	 */
+	isContainingParameter(key, parameter = null) {
+		if (!this.parameters[key]) return null;
+		if (
+			!parameter ||
+			(!Array.isArray(this.parameters[key]) &&
+				this.parameters[key] === parameter)
+		) {
+			return this.parameters[key];
+		}
+		if (Array.isArray(this.parameters[key])) {
+			const pos = this.parameters[key].indexOf(parameter);
+			if (pos >= 0) {
+				return this.parameters[key];
+			}
+		}
+		return null;
+	}
 	/**
 	 * Retourne tout les clef de la query sous forme d'une string
 	 */
