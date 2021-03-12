@@ -1,14 +1,96 @@
+:root {
+    --main-bg-color-header: #131319;
+    --main-font-color: #FBFCFF;
+    --main-accent-color: #ffd33f;
+    --main-accent-dark-color: #383856;
+    --main-accent-red-color: #A4303F;
+    --main-accent-green-color: #678d58;
+
+    --genre-action:  #ff4f6683 ;
+    --genre-action-2: #A4303F ;
+
+    --genre-indie: #ffd44681 ;
+    --genre-indie-2: #ffd33f;
+
+    --genre-adventure: #abf0f07c;
+    --genre-adventure-2:#91CECE ;
+
+    --genres-role-playing-games-rpg: #fab15283 ;
+    --genres-role-playing-games-rpg-2: #FFAC3E ;
+
+    --genre-strategy: #678d587e ;
+    --genre-strategy-2: #678d58 ;
+
+    --genre-shooter: #ff782f81 ;
+    --genre-shooter-2: #F3722C;
+
+    --genre-casual: #54d1ab80;
+    --genre-casual-2: #43AA8B;
+
+    --genre-simulation: #98527781;
+    --genre-simulation-2: #985277;
+
+    --genre-puzzle: #90be6d7c ;
+    --genre-puzzle-2: #90BE6D;
+
+    --genre-arcade: #f9844a80 ;
+    --genre-arcade-2: #F9844A;
+
+    --genre-platformer: #4d908e7e ;
+    --genre-platformer-2: #4D908E;
+
+    --genre-racing: #5775907a;
+    --genre-racing-2: #577590 ;
+
+    --genre-sports: #fc942480 ;
+    --genre-sports-2: #ff8200  ;
+
+    --genre-massively-multiplayer: #5775907a ;
+    --genre-massively-multiplayer-2: #577590;
+
+    --genre-fighting: #b23a487e ;
+    --genre-fighting-2: #b23a48;
+
+    --genre-family: #f4d58d80;
+    --genre-family-2: #f4d58d ;
+
+    --genre-board-games: #fcb1a67c;
+    --genre-board-games-2: #fcb1a6;
+
+    --genre-educational: #07beb880;
+    --genre-educational-2: #07beb8;
+
+    --genre-card: #00a89780 ;
+    --genre-card-2: #00a896;
+
+}
+
 * {
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body, html {
+    background-color: var(--main-bg-color-header);
+    color: var(--main-font-color);
     padding: 0;
     margin: 0;
     width: 100%;
     height: 100%;
 }
 
+body {
+    min-height: 100vh;
+}
+
+.pageContainer {
+    width: 100%;
+    max-width: 1100px;
+    padding-top: 130px;
+    padding-bottom: 30px;
+    min-height: 100%;
+    margin: auto;
+}
 .game-container {
     width: 100%;
     display: flex;
@@ -18,32 +100,7 @@ body, html {
     justify-content: space-around;
 }
 
-.gameCard {
-    max-width: 300px;
-    width: 100%;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    border: 2px solid black;
-    cursor: pointer;
-}
 
-.gameCard > .CardImageContainer {
-    max-width: 100%;
-    width: 100%;
-    max-height: 50%;
-    height: 50%;
-    border-radius: 10px 10px 0 0;
-    flex-shrink: 0;
-}
-.gameCard > .CardImageContainer > img {
-    display: block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-}
 
 #chargement-more-ressources {
     font-size: 25px;
@@ -68,21 +125,77 @@ body, html {
     height: 100%;  
     opacity: .8; 
     z-index: -1;
-    background-color: rgba(75, 75, 75, 1);
+    background-color: var(--main-accent-dark-color);
   }
   
 #goTop {
+    opacity: 0;
     position: fixed;
     bottom: 15px;
     right: 15px;
     width: 35px;
     height: 35px;
-    border-radius:  50%;
-    background-color: brown;
+    border-radius:  35px;
+    background-color: var(--main-accent-red-color);
     z-index: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+#goTop.show {
+    cursor: pointer;
+    opacity: 1;
+}
+#goTop:hover {
+    min-width: 35px;
+    width: auto;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#goTop:hover::after {
+    content: 'Haut de la page';
+    width: auto;
+    padding: 5px;
+}
+
+.NoMoreRessources {
+    text-align: center;
+}
+
+#select-genres {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#select-genres-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
+    width: 100%;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+.select-genres__title {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+.optionFilter-genres, .optionFilter-ordering {
     cursor: pointer;
+}
+.optionFilter-genres > div, .optionFilter-ordering > div{
+    transform: scale(1);
+    opacity: 0.55;
+    transition: all 0.5s ease;
+}
+
+.optionFilter-genres > div.active, .optionFilter-ordering > div.active {
+    transform: scale(1.1);
+    opacity: 1;
+    transition: all 0.5s ease;
 }

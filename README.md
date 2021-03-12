@@ -53,11 +53,11 @@ Voici une liste des taches a faire afin de les effectuer:
       - [x] apres l'appel du mount: update la currentPage avec celle demander
    - [x] Creation d'un dossier Game dans le dossier : ```./src/components/```
    - [x] Suppresion du dossier gameCard et de son contenu
-   - [ ] Creation du **header** commun a tout nos pages de nos applications dans le fichier ```./index.html``` et son css associes dans le fichier ```./css/header.css```
-   - [ ] Creation du **footer** commun a tout nos pages de nos applications dans le fichier ```./index.html``` et son css associes dans le fichier ```./css/footer.css```
+   - [x] Creation du **header** commun a tout nos pages de nos applications dans le fichier ```./index.html``` et son css associes dans le fichier ```./css/header.css```
+   - [x] Creation du **footer** commun a tout nos pages de nos applications dans le fichier ```./index.html``` et son css associes dans le fichier ```./css/footer.css```
    - [ ] Mise a jour du ReadMe au fil de la Realisation des Taches
    - [ ] CleanUp a la fin des console.log etc...
-- [ ] **La page d'acceuil**:
+- [x] **La page d'acceuil**:
    - [x] Commencons par creer un composant GameCard
       - [x] Creation d'un dossier Game dans le dossier : ```./src/components/```
       - [x] Creation du fichier ```GameCard.js``` dans le dossier : ```./src/components/```
@@ -70,7 +70,7 @@ Voici une liste des taches a faire afin de les effectuer:
    ```
    - [x] Ajouter le systeme de query
    - [x] handle l'ajout des ressources
-   - [ ] styling the HomePage
+   - [x] styling the HomePage
 - [ ] **La page Detailler d'un jeu**:
    - [ ] Cette page fait reference au fichier [DetailGamePage.js](./src/pages/DetailGamePage.js)
    - [ ] Pour tester cette page, rendez vous a l'adresse [http://localhost:8000/detail-cyberpunk-2077](http://localhost:8000/detail-cyberpunk-2077)

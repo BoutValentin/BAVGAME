@@ -1,10 +1,17 @@
-import { Query, API_KEY, METACRITIC, PAGE_SIZE, DATE_RELEASE } from '../query';
+import {
+	Query,
+	API_KEY,
+	METACRITIC,
+	PAGE_SIZE,
+	DATE_RELEASE,
+	PAGE,
+} from '../query';
 
-const queryDefault = `key=${API_KEY}&metacritic=${METACRITIC}&page_size=${PAGE_SIZE}&dates=${
+const queryDefault = `key=${API_KEY}&metacritic=${METACRITIC}&page_size=${PAGE_SIZE}&pages=${PAGE}&dates=${
 	DATE_RELEASE +
-	`${new Date().getFullYear()}-${('0' + new Date().getMonth()).slice(-2)}-${(
-		'0' + new Date().getDate()
-	).slice(-2)}`
+	`${new Date().getFullYear()}-${('0' + (new Date().getMonth() + 1)).slice(
+		-2
+	)}-${('0' + new Date().getDate()).slice(-2)}`
 }`;
 const expected = {
 	'test emptyQuery': queryDefault,

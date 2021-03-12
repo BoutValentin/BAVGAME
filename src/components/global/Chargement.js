@@ -5,7 +5,7 @@ export class Chargement extends Component {
 		super(
 			'div',
 			[{ name: 'id', value: 'chargement-more-ressources' }],
-			new Component('p', [], 'Chargement...')
+			new Component('p', [], 'Loading...')
 		);
 	}
 }

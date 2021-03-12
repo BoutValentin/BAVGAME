@@ -1,37 +1,27 @@
 export const sortResults = [
 	{
-		attribute: {
-			name: 'value',
-			value: 'none',
-		},
-		text: 'Pertinence',
+		text: 'Relevance',
+		type: 'none',
+		value: 'none',
 	},
 	{
-		attribute: {
-			name: 'value',
-			value: 'released',
-		},
-		text: 'date de sortie (Asc)',
+		text: 'Released',
+		type: 'ascending',
+		value: 'released',
 	},
 	{
-		attribute: {
-			name: 'value',
-			value: '-released',
-		},
-		text: 'date de sortie (Desc)',
+		text: 'Released',
+		type: 'descending',
+		value: '-released',
 	},
 	{
-		attribute: {
-			name: 'value',
-			value: 'metacritic',
-		},
-		text: 'metacritic (Asc)',
+		text: 'Metacritic',
+		type: 'ascending',
+		value: 'metacritic',
 	},
 	{
-		attribute: {
-			name: 'value',
-			value: '-metacritic',
-		},
-		text: 'metacritic (Desc)',
+		text: 'Metacritic',
+		type: 'descending',
+		value: '-metacritic',
 	},
 ];

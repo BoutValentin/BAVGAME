@@ -1,0 +1,153 @@
+.search-input-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 15px;
+    margin: 20px auto;
+}
+
+.search-input-container > input {
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--main-accent-dark-color);
+    margin: auto 15px;
+    transition: all 0.3s ease;
+}
+
+.search-input-container >input:active, .search-input-container > input:focus-visible  {
+    border-bottom: 2px solid var(--main-accent-color);
+}
+
+.search-input-container >input:hover {
+    border-bottom: 2px solid var(--genres-role-playing-games-rpg-2);
+}
+
+.search-input__img-container {
+    height: 30px;
+    width: 30px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-accent-color);
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 12px 4px rgba(0,0,0,0.22); 
+    box-shadow: 0px 0px 12px 4px rgba(0,0,0,0.22);
+    transition: all 0.3s ease;
+}
+.search-input__img-container:active {
+    transform: scale(0.9);
+}
+
+.search-input__img-container:hover {
+    transform: scale(1.15) rotate(-15deg);
+}
+.search-input__img-container > img {
+    height: 15px;
+    width: 15px;
+}
+.search-container {
+	width: 100%;
+	max-width: 80%;
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	padding: 25px 10px;
+	margin: 15px auto 55px auto;
+	background-color: var(--main-font-color);
+	color: var(--main-bg-color-header);
+	border-radius: 15px;
+	-webkit-box-shadow: 0px 0px 23px 8px rgba(123, 123, 123, 0.55);
+	box-shadow: 0px 0px 23px 8px rgba(123, 123, 123, 0.55);
+}
+
+.search-p {
+	color: var(--main-accent-red-color);
+	font-size: 25px;
+	font-weight: 600;
+	padding: 10px 10px;
+	margin: 10px auto;
+	text-align: center;
+}
+
+.select-container {
+	width: 100%;
+	margin: 20px 15px;
+	max-width: 80%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+.select-container > select {
+	min-width: 200px;
+}
+.ordering-container {
+    width: 100%;
+    margin: 30px auto;
+}
+.ordering-container-filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.sort-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: rgba(255, 35, 35, 0.486);
+	padding: 7px 10px;
+    margin: 5px 10px;
+	min-width: 70px;
+	min-height: 32px;
+    -webkit-box-shadow: 0px 0px 5px 8px rgba(87, 87, 87, 0.25); 
+    box-shadow: 0px 0px 5px 8px rgba(87,87,87,0.25);
+    border-radius: 30px;
+}
+
+.sort-container .sort__image {
+	height: 20px;
+	width: 20px;
+	margin: auto 7px;
+}
+
+.sort-container .sort__title {
+	color: black;
+	font-weight: 500;
+	font-size: 0.7em;
+	margin: auto 7px auto 0px;
+}
+
+.relevance-none {
+    background-color: var(--genre-adventure-2) ;
+}
+
+.released-ascending {
+    background-color: var(--genre-fighting-2);
+}
+
+.released-descending {
+    background-color: var(--genre-strategy-2);
+}
+
+.metacritic-ascending {
+    background-color: var(--genre-arcade-2);
+}
+
+.metacritic-descending {
+    background-color: var(--genre-platformer-2);
+}
+
+
