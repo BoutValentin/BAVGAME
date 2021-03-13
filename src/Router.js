@@ -8,7 +8,18 @@ export default class Router {
 
 	static set menuNavigation(element) {
 		this.#menuNavigation = element;
-		//set listener pour faire la navigation par le router et non par le browser
+		this.#menuNavigation.querySelectorAll('a').forEach(link => {
+			link.addEventListener('click', e => {
+				e.stopImmediatePropagation();
+				e.preventDefault();
+				const extendsMenu = document.querySelector('.header-container.extends');
+				if (extendsMenu?.classList.contains('visible')) {
+					extendsMenu?.classList.toggle('hidden');
+					extendsMenu?.classList.toggle('visible');
+				}
+				this.navigate(e.currentTarget.getAttribute('href'));
+			});
+		});
 	}
 	/**
 	 * Realise la navigation au sein de notre application en montant les pages dans le contenant Router.sectionHTMLContent
@@ -18,8 +29,8 @@ export default class Router {
 	 */
 	static navigate(path, pushState = true) {
 		const route = this.routes.find(route => route.pathMatcher.test(path));
-
 		if (route) {
+			window.scrollTo(0, 0);
 			if (this.currentPage) {
 				this.currentPage.unmount();
 			}
@@ -28,6 +39,15 @@ export default class Router {
 			// Changer le titre sur longlet par celui de la page
 			document.querySelector('head title').innerText = route.page.pageTitle;
 			// TODO: ajouter les liens active
+			const menuLinks = this.#menuNavigation.querySelectorAll('a'),
+				prevActiveLinks = this.#menuNavigation.querySelectorAll('a.active');
+			prevActiveLinks.forEach(link => link.classList.remove('active'));
+			menuLinks.forEach(
+				link =>
+					route.page.constructor.name !== 'NotFoundPage' &&
+					route.pathMatcher.test(link.getAttribute('href')) &&
+					link.classList.add('active')
+			);
 		}
 
 		if (pushState) {
@@ -47,15 +67,13 @@ export default class Router {
 	 */
 	static initRouter(sectionContent, menuNav) {
 		this.sectionHTMLContent = sectionContent;
-		this.menuNav = menuNav;
-		document.querySelectorAll('a').forEach(node =>
-			node.addEventListener('click', e => {
-				e.preventDefault();
-				this.navigate(e.target.getAttribute('href'));
-			})
-		);
+		this.menuNavigation = menuNav;
+
 		const handleBack = EPopState => {
-			Router.navigate(EPopState.state.path);
+			Router.navigate(
+				EPopState.state.path || document.location.pathname,
+				false
+			);
 		};
 
 		window.onpopstate = handleBack;

@@ -1,5 +1,5 @@
 {
-  "name": "pizzaland",
+  "name": "bavgame",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,8 +10,8 @@
     "prof": "npm install && npm run build && npx serve -s -l 8000",
     "profDev": "npm install && npm run watch & npx serve -s -l 8000"
   },
-  "author": "Thomas Fritsch <thomas.fritsch@univ-lille.fr> (https://gitlab.univ-lille.fr/thomas.fritsch)",
-  "homepage": "https://gitlab.univ-lille.fr/js",
+  "author": "Aurelien PLANCKE <aurelient.plancke.etu@univ-lille.fr> (https://gitlab.univ-lille.fr/aurelient.plancke.etu), Baptiste HERBECQ <baptiste.herbecq.etu@univ-lille.fr> (https://gitlab.univ-lille.fr/baptiste.herbecq.etu), Valentin BOUT <valentin.bout.etu@univ-lille.fr> (https://gitlab.univ-lille.fr/valentin.bout.etu)",
+  "homepage": "https://gitlab.univ-lille.fr/valentin.bout.etu/jsprojectbav",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.12.10",

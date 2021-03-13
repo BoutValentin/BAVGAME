@@ -1,3 +1,4 @@
+import { Query } from '../query';
 import { Resources } from './Resources';
 
 /**
@@ -42,5 +43,15 @@ export class GenreResource extends Resources {
 	 */
 	async getManyById(ids) {
 		return await super.getManyById(ids, this.query.getStringQuery());
+	}
+
+	static async getAllGenre(resultsArray = [], query = new Query(), page = 1) {
+		const results = await new GenreResource(query).getAll();
+		resultsArray = [...resultsArray, ...results.results];
+		if (results.next) {
+			query.addOneParameter('page', ++page, true);
+			return await this.getAllGenre(resultsArray, query, page);
+		}
+		return resultsArray;
 	}
 }

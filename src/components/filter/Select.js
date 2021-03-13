@@ -35,7 +35,7 @@ export class Select extends AbstractFilter {
 			true
 		);
 		//reset query pour eviter un throw
-		this.addParameterOnQueryPage('page', 1, true);
+		this.queryAttach.resetQuery();
 	}
 
 	initOrDestroyEvent(key = 'addEventListener') {

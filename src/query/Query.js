@@ -1,7 +1,8 @@
 export const API_KEY = 'ae1f2f3bbd7a4dd29f7e4a2aed685059';
-export const METACRITIC = 50;
+export const METACRITIC = '50,100';
 export const PAGE_SIZE = 20;
 export const DATE_RELEASE = '2020-01-01,';
+export const PAGE = 1;
 export class Query {
 	parameters;
 	/**
@@ -17,9 +18,10 @@ export class Query {
 			key: API_KEY,
 			metacritic: METACRITIC,
 			page_size: PAGE_SIZE,
+			pages: PAGE,
 			dates:
 				DATE_RELEASE +
-				`${date.getFullYear()}-${('0' + date.getMonth()).slice(-2)}-${(
+				`${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${(
 					'0' + date.getDate()
 				).slice(-2)}`,
 		};
@@ -113,5 +115,21 @@ export class Query {
 			}`;
 		}
 		return string;
+	}
+
+	resetQuery() {
+		const date = new Date();
+		this.parameters = {
+			...this.parameters,
+			key: API_KEY,
+			metacritic: METACRITIC,
+			page_size: PAGE_SIZE,
+			pages: PAGE,
+			dates:
+				DATE_RELEASE +
+				`${date.getFullYear()}-${('0' + date.getMonth()).slice(-2)}-${(
+					'0' + date.getDate()
+				).slice(-2)}`,
+		};
 	}
 }

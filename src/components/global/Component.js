@@ -11,7 +11,7 @@ export class Component {
 
 	render() {
 		let html = `<${this.tagName} ${this.renderAttributes()}`;
-		if (this.children) {
+		if (this.children != null) {
 			html += `>${this.renderChildren()}</${this.tagName}>`;
 		} else {
 			html += ' />';
@@ -41,7 +41,12 @@ export class Component {
 		if (this.children instanceof Array) {
 			return this.children.reduce(
 				(html, child) =>
-					html + (child instanceof Component ? child.render() : child),
+					html +
+					(child instanceof Component
+						? child.render()
+						: child == null
+						? ''
+						: child),
 				''
 			);
 		}

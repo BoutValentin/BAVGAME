@@ -10,15 +10,12 @@ export class HomePage extends Page {
 	currentRessources = [[]];
 	lastPageFetch = 0;
 	asNextPage = false;
-	fetchError = false;
 	eventIsHandle = false;
+	requestWasSend = false;
 	constructor() {
-		super('HOME', 'favoritesPage');
+		super('HOME', 'homePage');
 		this.handleQueryChange = this.handleQueryChange.bind(this);
 		this.handleScrollEvent = this.handleScrollEvent.bind(this);
-		//add event listener on custom event (queryChange) to retrigger mount on change and clear currentRessources;
-		// on oublie pas de reset currentResource et lastPageFetch
-		//add event listener on custom event to have more ressources and lancant la fonction addResources puis un mount dans un .then
 	}
 
 	mount(element) {
@@ -27,53 +24,30 @@ export class HomePage extends Page {
 			this.eventIsHandle = true;
 		}
 		super.mount(element);
-		// Recuperer tout les 20 premieres ressources de /games
-		this.element.innerHTML = 'chargement';
-		// ajout handle du cache
+		this.element.innerHTML = 'Loading...';
+		this.requestWasSend = true;
 		this.addResources().then(rep => {
+			this.requestWasSend = false;
 			this.children = new HomePageComponent(this.gameResources.query);
 			this.element.innerHTML = this.render();
 			this.addRessourceToContainer('game-container');
 			this.children.initEvent();
 		});
-		//HomePage.gameResources.getAll().then(rep => console.log(rep));
-
-		// Recuperer tout la ressources de /games/cyberpunk-2077
-		//HomePage.gameResources.getOne('cyberpunk-2077').then(rep => console.log(rep));
-
-		// Recuperer un tableau de ressources correspondant au id passer en parametres
-		//HomePage.gameResources.getManyById(['cyberpunk-2077', 'fall-guys']).then(rep => console.log(rep));
-		// recupere les ressources avec addRessources
-		// .then(
-		// pour chaque ressource dans currentResources correspondant a lastPageFetch -1
-		// this.element.innerHTML += new GameCard(res);
 	}
 
 	async addResources() {
-		if (this.asNextPage) {
-			return 'NoMoreRessources';
-		}
+		if (this.asNextPage) return 'NoMoreRessources';
 		this.gameResources.query.addOneParameter(
 			'page',
 			this.lastPageFetch + 1,
 			true
 		);
 		const reponse = await this.gameResources.getAll();
-		this.fetchError = reponse.error == null;
-		if (reponse.error) {
-			this.fetchError = true;
-			return reponse;
-		}
+		if (reponse.error) return reponse;
+		if (reponse.results.length == 0) return 'NoRessourcesFind';
 		this.asNextPage = reponse.next == null;
 		this.currentRessources[this.lastPageFetch++] = [...reponse.results];
 	}
-	//async function addRessources
-	//utilise game resource pour obtenir plus de ressources
-	//update la query en changeant page par lastPageFetch ++
-	// lance la rechercher avec le game resource
-	// await une rep
-	// si objet erreur : <voir quoi faire>
-	// sinon ajoute au tableau currentRessource[lastPageFetch];
 
 	initOrDestroyEvent(key = 'addEventListener') {
 		window[key]('queryChange', this.handleQueryChange);
@@ -84,60 +58,96 @@ export class HomePage extends Page {
 		this.currentRessources = [[]];
 		this.lastPageFetch = 0;
 		this.asNextPage = false;
-		this.fetchError = false;
 		this.eventIsHandle = false;
 	}
 
 	handleQueryChange() {
 		if (!this.element) return;
 		this.resetRessources();
-		// REMPLACER PAR UN CHAGNEMENT SEULEMENT DES CARDS
-		this.addResources().then(rep =>
-			this.addRessourceToContainer('game-container', true)
-		);
+		document.querySelector('.game-container').innerHTML = 'Loading...';
+		this.requestWasSend = true;
+		this.addResources().then(rep => {
+			this.requestWasSend = false;
+			if (rep === 'NoMoreRessources') {
+				this.noMoreRessourceAdder();
+				document.querySelector('#chargement-more-ressources').remove();
+				return;
+			}
+			if (rep === 'NoRessourcesFind') {
+				document.querySelector('.game-container').innerHTML = '';
+				this.noMoreRessourceAdder();
+				return;
+			}
+			document.querySelector('.NoMoreRessources')?.remove();
+			this.addRessourceToContainer('game-container', true);
+		});
 	}
 
 	handleScrollEvent() {
-		var element = document.documentElement;
-		if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-			// Ajout d'un p chargement
-
-			//.then appelle gamePageComponents.addGameCard
-			// ou ajouter dans apres le selector de GameCardContainer un for each creeant une carte et la render direct
-			// Si error on ajouter le composant fetch error a la place
-			const element = document.querySelector('header').parentNode;
-			var template = document.createElement('template');
-			template.innerHTML = new Chargement().render();
-			element.insertBefore(
-				template.content.firstChild,
-				document.querySelector('header')
-			);
-			this.addResources().then(rep => {
-				this.addRessourceToContainer('game-container');
+		if (this.requestWasSend) return;
+		const element = document.documentElement;
+		if (element.scrollHeight - element.scrollTop !== element.clientHeight)
+			return;
+		const elementToInsert = document.querySelector('header').parentNode;
+		const template = document.createElement('template');
+		template.innerHTML = new Chargement().render();
+		elementToInsert.insertBefore(
+			template.content.firstChild,
+			document.querySelector('header')
+		);
+		this.requestWasSend = true;
+		this.addResources().then(rep => {
+			this.requestWasSend = false;
+			if (rep === 'NoMoreRessources') {
+				this.noMoreRessourceAdder();
 				document.querySelector('#chargement-more-ressources').remove();
-			});
-
-			// retrait de ce p
-		}
+				return;
+			}
+			if (rep === 'NoRessourcesFind') {
+				document.querySelector('.game-container').innerHTML = '';
+				this.noMoreRessourceAdder();
+				return;
+			}
+			document.querySelector('.NoMoreRessources')?.remove();
+			this.addRessourceToContainer('game-container');
+			document.querySelector('#chargement-more-ressources').remove();
+		});
 	}
+
 	addRessourceToContainer(classe, reset = false) {
 		const element = document.querySelector(`.${classe}`);
-		if (reset) element.innerHTML = '';
-		let gcs = [];
-		element.insertAdjacentHTML(
+		if (reset && element) element.innerHTML = '';
+		let gameCardsCreate = [];
+		if (!this.currentRessources[this.lastPageFetch - 1]) return;
+		element?.insertAdjacentHTML(
 			'beforeend',
-			this.currentRessources[this.lastPageFetch - 1].reduce(
+			this.currentRessources?.[this.lastPageFetch - 1].reduce(
 				(prev, current, index) =>
-					prev + (gcs = [...gcs, new GameCard(current)])[index].render(),
+					prev +
+					(gameCardsCreate = [...gameCardsCreate, new GameCard(current)])[
+						index
+					].render(),
 				''
 			)
 		);
-		gcs.forEach(gc => gc.handleEvent());
+		gameCardsCreate.forEach(gameCard => gameCard.handleEvent());
 	}
+
+	noMoreRessourceAdder() {
+		if (document.querySelector('.NoMoreRessources')) return;
+		const refNode = document.querySelector('.game-container');
+		const template = document.createElement('template');
+		template.innerHTML = `<p class="NoMoreRessources">We have no or more games to show you :(</p>`;
+		refNode.parentNode.insertBefore(
+			template.content.firstChild,
+			refNode.nextSibling
+		);
+	}
+
 	unmount() {
 		this.initOrDestroyEvent('removeEventListener');
 		this.eventIsHandle = false;
-		//this.resetRessources();
+		this.resetRessources();
 		this.children.destroyEvent();
 	}
 }

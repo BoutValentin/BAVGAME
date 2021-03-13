@@ -1,0 +1,187 @@
+.genres_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+div[class*=' genres-'], div[class^='genres-'] {
+    color: black;
+    background-color: rgba(255, 35, 35, 0.486);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+    margin: 5px 10px;
+    min-width: 70px;
+    height: 32px;
+}
+
+div[class*=' genres-'] > .genres__rounded, div[class^='genres-'] > .genres__rounded {
+    color: black;
+    background-color: red;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    margin: auto 7px;
+}
+
+div[class*=' genres-'] > .genres__name, div[class^='genres-'] > .genres__name {
+    color: black;
+    font-weight: 500;
+    font-size: 0.7em;
+    margin: auto 7px auto 0px;
+}
+
+   
+.genres-action {
+    background-color: var(--genre-action) !important; 
+}
+
+.genres- > .genres__rounded{
+    background-color: var(--genre-action-2)!important;
+}
+
+.genres-indie {
+    background-color: var(--genre-indie) !important ;
+}
+
+.genres-indie > .genres__rounded{
+    background-color: var(--genre-indie-2) !important ;
+}
+.genres-adventure {
+    background-color: var(--genre-adventure) !important ;
+}
+
+.genres-adventure > .genres__rounded{
+    background-color: var(--genre-adventure-2) !important ;
+}
+.genres-role-playing-games-rpg {
+    background-color: var(--genres-role-playing-games-rpg) !important ;
+}
+
+.genres-role-playing-games-rpg > .genres__rounded{
+    background-color: var(--genres-role-playing-games-rpg-2) !important ;
+}
+
+.genres-strategy {
+    background-color: var(--genre-strategy) !important ;
+}
+
+.genres-strategy > .genres__rounded{
+    background-color: var(--genre-strategy-2) !important ;
+}
+
+.genres-shooter {
+    background-color: var(--genre-shooter) !important ;
+}
+
+.genres-shooter > .genres__rounded{
+    background-color: var(--genre-shooter-2) !important ;
+}
+
+.genres-casual {
+    background-color: var(--genre-casual) !important ;
+}
+
+.genres-casual > .genres__rounded{
+    background-color: var(--genre-casual-2) !important ;
+}
+
+
+.genres-simulation {
+    background-color: var(--genre-simulation) !important ;
+}
+
+.genres-simulation > .genres__rounded{
+    background-color: var(--genre-simulation-2) !important ;
+}
+
+.genres-puzzle {
+    background-color: var(--genre-puzzle) !important ;
+}
+
+.genres-puzzle > .genres__rounded{
+    background-color: var(--genre-puzzle-2) !important ;
+}
+
+.genres-arcade {
+    background-color: var(--genre-arcade) !important ;
+}
+
+.genres-arcade > .genres__rounded{
+    background-color: var(--genre-arcade-2) !important ;
+}
+
+.genres-platformer {
+    background-color: var(--genre-platformer) !important ;
+}
+
+.genres-platformer > .genres__rounded{
+    background-color: var(--genre-platformer-2) !important ;
+}
+
+.genres-racing {
+    background-color: var(--genre-racing) !important ;
+}
+
+.genres-racing > .genres__rounded{
+    background-color: var(--genre-racing-2) !important ;
+}
+
+.genres-sports {
+    background-color: var(--genre-sports) !important ;
+}
+
+.genres-sports > .genres__rounded{
+    background-color: var(--genre-sports-2) !important ;
+}
+
+.genres-massively-multiplayer {
+    background-color: var(--genre-massively-multiplayer) !important ;
+}
+
+.genres-massively-multiplayer > .genres__rounded{
+    background-color: var(--genre-massively-multiplayer-2) !important ;
+}
+
+.genres-fighting {
+    background-color: var(--genre-fighting) !important ;
+}
+
+.genres-fighting > .genres__rounded{
+    background-color: var(--genre-fighting-2) !important ;
+}
+
+.genres-family {
+    background-color: var(--genre-family) !important ;
+}
+
+.genres-family > .genres__rounded{
+    background-color: var(--genre-family-2) !important ;
+}
+
+.genres-board-games {
+    background-color: var(--genre-board-games) !important ;
+}
+
+.genres-board-games > .genres__rounded{
+    background-color: var(--genre-board-games-2) !important ;
+}
+
+.genres-educational {
+    background-color: var(--genre-educational) !important ;
+}
+
+.genres-educational > .genres__rounded{
+    background-color: var(--genre-educational-2) !important ;
+}
+
+.genres-card {
+    background-color: var(--genre-card) !important ;
+}
+
+.genres-card > .genres__rounded{
+    background-color: var(--genre-card-2) !important ;
+}
