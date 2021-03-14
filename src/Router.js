@@ -5,6 +5,7 @@ export default class Router {
 	static sectionHTMLContent;
 	static #menuNavigation;
 	static currentPage;
+	static currentPath;
 
 	static set menuNavigation(element) {
 		this.#menuNavigation = element;
@@ -34,6 +35,8 @@ export default class Router {
 			if (this.currentPage) {
 				this.currentPage.unmount();
 			}
+			console.log(window.location.pathname);
+			this.currentPath = path;
 			route.page.mount(this.sectionHTMLContent);
 			this.currentPage = route.page;
 			// Changer le titre sur longlet par celui de la page
