@@ -2,7 +2,7 @@ import { Page } from './Page';
 
 export class NotFoundPage extends Page {
 	constructor() {
-		super('NOT FOUND', 'favoritesPage');
+		super('NOT FOUND', 'notFoundPage');
 	}
 
 	mount(element) {
