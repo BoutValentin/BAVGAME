@@ -46,7 +46,7 @@ Voici une liste des taches a faire afin de les effectuer:
 >       > Contre exemple: export default const maVariable
 >    - Dans chaque dossier contenant du js creer un fichier ```index.js``` ce fichier permet d'importer en utilisant directement le nom du dossier. Ce fichier doit exporter tout ce qui est contenu dans le dossier. plusieurs exemple sont disponible dans le projet [ici](./src/components/global/index.js) ou encore [ici](./src/pages/index.js)  
 > - Certaine tache on des chose en commun: comme la creation d'un composant CardGame commun aux favoris et a la homePage 
-- [ ] **General**:
+- [x] **General**:
    - [x] Dans la class page, ajouter une fonction unmount se desabonnant des event 
    - [x] Ajouter dans le router un attribut currentPage
       - [x] a l'appel de navigate: unMount la precedente page si elle existe
@@ -55,8 +55,8 @@ Voici une liste des taches a faire afin de les effectuer:
    - [x] Suppresion du dossier gameCard et de son contenu
    - [x] Creation du **header** commun a tout nos pages de nos applications dans le fichier ```./index.html``` et son css associes dans le fichier ```./css/header.css```
    - [x] Creation du **footer** commun a tout nos pages de nos applications dans le fichier ```./index.html``` et son css associes dans le fichier ```./css/footer.css```
-   - [ ] Mise a jour du ReadMe au fil de la Realisation des Taches
-   - [ ] CleanUp a la fin des console.log etc...
+   - [x] Mise a jour du ReadMe au fil de la Realisation des Taches
+   - [x] CleanUp a la fin des console.log etc...
 - [x] **La page d'acceuil**:
    - [x] Commencons par creer un composant GameCard
       - [x] Creation d'un dossier Game dans le dossier : ```./src/components/```
@@ -71,28 +71,28 @@ Voici une liste des taches a faire afin de les effectuer:
    - [x] Ajouter le systeme de query
    - [x] handle l'ajout des ressources
    - [x] styling the HomePage
-- [ ] **La page Detailler d'un jeu**:
-   - [ ] Cette page fait reference au fichier [DetailGamePage.js](./src/pages/DetailGamePage.js)
-   - [ ] Pour tester cette page, rendez vous a l'adresse [http://localhost:8000/detail-cyberpunk-2077](http://localhost:8000/detail-cyberpunk-2077)
-   - [ ] Dans cette page detailler, dans la function ```mount``` commencer par recuperer le pathname en utilisatn par exemple 
+- [x] **La page Detailler d'un jeu**:
+   - [x] Cette page fait reference au fichier [DetailGamePage.js](./src/pages/DetailGamePage.js)
+   - [x] Pour tester cette page, rendez vous a l'adresse [http://localhost:8000/detail-cyberpunk-2077](http://localhost:8000/detail-cyberpunk-2077)
+   - [x] Dans cette page detailler, dans la function ```mount``` commencer par recuperer le pathname en utilisatn par exemple 
    ```js
    const path = document.location.pathname
    ```
-   - [ ] A partir de ce path, retirer l'element ```/detail-``` pour ne recuperer que le nom de path, en utilisant replace par exemple
+   - [x] A partir de ce path, retirer l'element ```/detail-``` pour ne recuperer que le nom de path, en utilisant replace par exemple
    ```js
    // On remplace /detail- par rien -\(* - *)/-
    const slug = path.replace('/detail-', '');
    ```
-   - [ ] On effectue une requete a l'aide de l'attribut static de class ```GameResources``` en demandant les informations pour un seul jeux en utilisant le slug;
+   - [x] On effectue une requete a l'aide de l'attribut static de class ```GameResources``` en demandant les informations pour un seul jeux en utilisant le slug;
    ```js
    DetailGamePage.gameResources.getOne(slug)
 			.then(game => console.log(game));
    ```
-   - [ ] Dans ce ```.then```  on ajoute a l'attribut children de la page un composant que vous aurez creer par exemple:
+   - [x] Dans ce ```.then```  on ajoute a l'attribut children de la page un composant que vous aurez creer par exemple:
    ```js
    .then(game => this.children = new GameDetail({...game}).render())
    ```
-   - [ ] Modifions cette fonction pour handle les erreurs: 
+   - [x] Modifions cette fonction pour handle les erreurs: 
    ```js
    .then(game => {
       if (game.error) {
@@ -154,37 +154,37 @@ Voici une liste des taches a faire afin de les effectuer:
    })
    ```
    - [x] Ne pas oublier de definir le composant ErrorGameCard, affichant un message d'erreur en cas de problème
-- [ ] **Page l'equipe**:
-   - [ ] Cette page fait reference au fichier [TeamPage.js](./src/pages/TeamPage.js)
-   - [ ] Pour tester cette page, rendez vous a l'adresse [http://localhost:8000/lequipe.fr](http://localhost:8000/lequipe.fr)
-   - [ ] Dans cette page qui doit etre static nous allons nous faciliter la vie: Ecrire notre html dans un fichier, puis le fetch dans le mount.
-   - [ ] Commencons par recuperer le fichier ```./team.html```
-      - [ ] Dans la fonction mount du fichier:
-         - [ ] Creation d'une requete ```fetch```
+- [x] **Page l'equipe**:
+   - [x] Cette page fait reference au fichier [TeamPage.js](./src/pages/TeamPage.js)
+   - [x] Pour tester cette page, rendez vous a l'adresse [http://localhost:8000/lequipe.fr](http://localhost:8000/lequipe.fr)
+   - [x] Dans cette page qui doit etre static nous allons nous faciliter la vie: Ecrire notre html dans un fichier, puis le fetch dans le mount.
+   - [x] Commencons par recuperer le fichier ```./team.html```
+      - [x] Dans la fonction mount du fichier:
+         - [x] Creation d'une requete ```fetch```
          ```js
          mount(element){
             fetch('./team.html').then(rep => rep.text())
          }
          ```
-         - [ ] Apres le deuxieme ```then```, recuperer la reponse et la mettre dans l'attribut element de la page (qui existent dans la class ```Page``` extends par notre ```TeamPage.js```)
+         - [x] Apres le deuxieme ```then```, recuperer la reponse et la mettre dans l'attribut element de la page (qui existent dans la class ```Page``` extends par notre ```TeamPage.js```)
          ```js
          mount(element){
             fetch('./team.html').then(rep => rep.text()).then(html => this.element.innerHTML = html)
          }
          ```
-         - [ ] Si tout fonctionne comme (j'ai) prevu vous devrier voir sur votre page html 
+         - [x] Si tout fonctionne comme (j'ai) prevu vous devrier voir sur votre page html 
          ```Celui qui fait cette tache est le plus moche d'entre nous```
-   - [ ] Customizer le fichier ```./team.html```
-      - [ ] Dans ce fichier creer tout l'arborescence HTML necessaire (avec les class, id, etc... que vous jugez necessaire).
-      - [ ] Creation d'un fichier CSS ```Team.css``` dans le dossier ```./css/```
-      - [ ] Dans le fichier ```./index.html``` importer ce fichier css
-      - [ ] Dans le fichier ```./css/Team.css``` definir le style de cette page
-      - [ ] S'applaudir pour avoir reussi cette page Team! Bravo!
-- [ ] **Page 404**:
-   - [ ] Cette page fait reference au fichier [NotFoundPage.js](./src/pages/NotFoundPage.js)
-   - [ ] Pour tester cette page, rendez vous a une adresse n'existant pas : [par exemple ici](http://localhost:8000/baptiste-est-pas-beau)
-   - [ ] Dans la function mount de ce fichier:
-      - [ ] Creation d'une variable contenant du HTML: 
+   - [x] Customizer le fichier ```./team.html```
+      - [x] Dans ce fichier creer tout l'arborescence HTML necessaire (avec les class, id, etc... que vous jugez necessaire).
+      - [x] Creation d'un fichier CSS ```Team.css``` dans le dossier ```./css/```
+      - [x] Dans le fichier ```./index.html``` importer ce fichier css
+      - [x] Dans le fichier ```./css/Team.css``` definir le style de cette page
+      - [x] S'applaudir pour avoir reussi cette page Team! Bravo!
+- [x] **Page 404**:
+   - [x] Cette page fait reference au fichier [NotFoundPage.js](./src/pages/NotFoundPage.js)
+   - [x] Pour tester cette page, rendez vous a une adresse n'existant pas : [par exemple ici](http://localhost:8000/baptiste-est-pas-beau)
+   - [x] Dans la function mount de ce fichier:
+      - [x] Creation d'une variable contenant du HTML: 
          ```js
          mount(element) {
 		      super.mount(element);
@@ -197,7 +197,7 @@ Voici une liste des taches a faire afin de les effectuer:
             `;
          }   
          ```
-      - [ ] Ajout de cette variable a l'attribut ```element``` en innerHtml de la page:
+      - [x] Ajout de cette variable a l'attribut ```element``` en innerHtml de la page:
          ```js
          .
          .
@@ -205,10 +205,10 @@ Voici une liste des taches a faire afin de les effectuer:
          const html = `....`;
          this.element.innerHTML = html;
          ```
-   - [ ] Creation d'un fichier CSS ```NotFound.css``` dans le dossier ```./css/```
-   - [ ] Dans le fichier ```./index.html``` importer ce fichier css
-   - [ ] Dans le fichier ```./css/NotFound.css``` definir le style de cette page
-   - [ ] S'applaudir pour avoir reussi cette page 404! Bravo!
+   - [x] Creation d'un fichier CSS ```NotFound.css``` dans le dossier ```./css/```
+   - [x] Dans le fichier ```./index.html``` importer ce fichier css
+   - [x] Dans le fichier ```./css/NotFound.css``` definir le style de cette page
+   - [x] S'applaudir pour avoir reussi cette page 404! Bravo!
 ## Bonus: des meme de l'equipe
 
 <img src="./images/Readme/meme2.png" alt="meme1"/>

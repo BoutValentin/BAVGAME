@@ -35,13 +35,10 @@ export default class Router {
 			if (this.currentPage) {
 				this.currentPage.unmount();
 			}
-			console.log(window.location.pathname);
 			this.currentPath = path;
 			route.page.mount(this.sectionHTMLContent);
 			this.currentPage = route.page;
-			// Changer le titre sur longlet par celui de la page
 			document.querySelector('head title').innerText = route.page.pageTitle;
-			// TODO: ajouter les liens active
 			const menuLinks = this.#menuNavigation.querySelectorAll('a'),
 				prevActiveLinks = this.#menuNavigation.querySelectorAll('a.active');
 			prevActiveLinks.forEach(link => link.classList.remove('active'));
@@ -80,7 +77,6 @@ export default class Router {
 		};
 
 		window.onpopstate = handleBack;
-		//TODO: A verifier si push state doit etre fait
 		this.navigate(document.location.pathname);
 	}
 }

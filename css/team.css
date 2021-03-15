@@ -1,0 +1,135 @@
+.allContain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#wannaSeeDaBoyzzz {
+    width: auto;
+    padding: 5px 10px;
+    margin: 10px auto;
+    height: auto;
+    font-size: 1.5em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: color-change 0.3s infinite;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: 600;
+    text-shadow: 2px 2px var(--main-font-color);
+    border: 2px solid;
+    transition: all 0.3s ease;
+}
+
+.theOnlyTruth a, .theOnlyTruth a:visited {
+    color: var(--main-font-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    animation: color-change 0.3s infinite;
+    text-shadow: 2px -2px var(--main-font-color);
+}
+
+#wannaSeeDaBoyzzz:hover {
+    transform: scale(1.1);
+}
+
+.team-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.lesBossContainer {
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid;
+    border-radius: 25px;
+}
+
+.imagesDesBoss {
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    padding: 4px;
+    animation: color-change 0.3s infinite;
+}
+
+
+.lesBossContainer:hover > .lesBoSurnom {
+    animation: color-change 0.1s infinite;
+    transition: all 1s ease;
+    transform: scale(1.5) rotate(360deg);
+}
+
+.lesBossContainer:hover .imagesDesBoss, .lesBossContainer:hover > .noteDesBG{
+    animation: color-change 0.1s infinite, spin-around-round-round-round linear 15s infinite;
+    transition: all 15s ease;
+    animation: scale(1.4) rotate(1800deg);
+}
+
+.lesBossContainer > h2 {
+    padding-top: 20px;
+
+}
+
+.lesBoSurnom {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: color-change 0.3s infinite;
+}
+
+
+@keyframes color-change {
+    0% { background-image: linear-gradient(to left,  indigo, blue, green, yellow, orange, red, violet); }
+    14% {background-image: linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);}
+    28% {background-image: linear-gradient(to left, green, yellow, orange, red, violet, indigo, blue);}
+    42% {background-image: linear-gradient(to left, yellow, orange, red, violet, indigo, blue, green );}
+    60% {background-image: linear-gradient(to left, orange, red, violet, indigo, blue, green, yellow);}
+    78% {background-image: linear-gradient(to left,red, violet, indigo, blue, green, yellow, orange);}
+    100% { background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red); }
+}
+
+@keyframes spin-around-round-round-round {
+    0% {transform: rotate(0deg) scale(1);}
+    25% {transform: rotate(900deg) scale(0.8);}
+    50% {transform: rotate(1800deg) scale(1.1);}
+    75% {transform: rotate(2700deg) scale(0.8);}
+    100% {transform: rotate(3600deg) scale(1);}
+}
+.noteDesBG {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 1.5em;
+    color: black;
+    text-shadow: 1px 1px white;
+    -webkit-box-shadow: 0px 0px 12px 4px rgba(0,0,0,0.22); 
+    box-shadow: 0px 0px 12px 4px rgba(0,0,0,0.22);
+    animation: color-change 0.3s infinite;
+}
+
+@media screen and (max-width: 1100px) {
+    .team-container {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+}
