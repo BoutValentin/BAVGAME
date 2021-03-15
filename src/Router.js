@@ -5,7 +5,6 @@ export default class Router {
 	static sectionHTMLContent;
 	static #menuNavigation;
 	static currentPage;
-	static currentPath;
 
 	static set menuNavigation(element) {
 		this.#menuNavigation = element;
@@ -30,12 +29,21 @@ export default class Router {
 	 */
 	static navigate(path, pushState = true) {
 		const route = this.routes.find(route => route.pathMatcher.test(path));
+
 		if (route) {
 			window.scrollTo(0, 0);
+			
+			if (pushState) {
+				window.history.pushState(
+					{ pageTitle: route.page.pageTitle, path: path },
+					route.page.pageTitle,
+					path
+				);
+			}
+
 			if (this.currentPage) {
 				this.currentPage.unmount();
 			}
-			this.currentPath = path;
 			route.page.mount(this.sectionHTMLContent);
 			this.currentPage = route.page;
 			document.querySelector('head title').innerText = route.page.pageTitle;
@@ -47,14 +55,6 @@ export default class Router {
 					route.page.constructor.name !== 'NotFoundPage' &&
 					route.pathMatcher.test(link.getAttribute('href')) &&
 					link.classList.add('active')
-			);
-		}
-
-		if (pushState) {
-			window.history.pushState(
-				{ pageTitle: route.page.pageTitle, path: path },
-				route.page.pageTitle,
-				path
 			);
 		}
 	}

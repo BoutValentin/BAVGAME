@@ -17,7 +17,7 @@ export class DetailGamePage extends Page {
 		this.element.innerHTML = '<h1>Loading...</h1>';
 		this.pageTitle = 'Chargement...';
 
-		const path = Router.currentPath;
+		const path = window.location.pathname;
 		const slug = path.replace('/detail-', '');
 
 		this.gameResources.getOne(slug).then(game => {
