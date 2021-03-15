@@ -12,9 +12,10 @@ export class TeamPage extends Page {
 		super.mount(element);
 		if (!this.cacheHtml) {
 			this.element.innerHTML = 'Loading...';
-			fetch('./team.html')
+			fetch('/team.html')
 				.then(rep => rep.text())
 				.then(html => {
+					console.log(html);
 					this.element.innerHTML = html;
 					this.cacheHtml = html;
 					this.initEvent();
