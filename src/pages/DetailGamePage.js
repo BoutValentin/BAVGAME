@@ -23,6 +23,7 @@ export class DetailGamePage extends Page {
 		this.gameResources.getOne(slug).then(game => {
 			if (game.error) {
 				Router.navigate('404');
+				return;
 			} else {
 				this.children = new GameDetail({ ...game });
 				this.pageTitle = game.name;
