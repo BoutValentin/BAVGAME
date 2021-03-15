@@ -74,9 +74,6 @@ export class FavoritesPage extends Page {
 		}
 	}
 
-	/**
-	 *
-	 */
 	addListenerReturnHomePage() {
 		document
 			.getElementById('returnHomePage')

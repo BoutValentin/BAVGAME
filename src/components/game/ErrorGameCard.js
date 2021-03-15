@@ -5,7 +5,7 @@ export class ErrorGameCard extends GameCard {
 		super({
 			slug,
 			name: "Ce jeu n'existe pas",
-			background_image: './images/pulp.gif',
+			background_image: '/images/pulp.gif',
 		});
 	}
 }
