@@ -30,7 +30,6 @@ export class GameResources extends Resources {
 		query.removeOneParameter('metacritic');
 		query.removeOneParameter('dates');
 		query.removeOneParameter('pages');
-		console.log(query);
 
 		const screenshots = await new Resources(
 			`${this.entrypoint}/${id}/screenshots`
