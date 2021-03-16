@@ -89,7 +89,18 @@
 }
 
 .partOneDetailContainer {
+    position: relative;
     width: 45%;
+}
+
+.plateformsAndLikeContainer {
+    width: 20%;
+    position: relative;
+}
+
+#scrollingPartOneDetailContainer, #scrollingPlateformsAndLikeContainer {
+    position: absolute;
+    top: 0;
 }
 
 .partTwoDetailContainer {
@@ -123,12 +134,12 @@
     margin: 60px auto;
 }
 
-.FavoriteButtonContainerDetailPage .favoritesButton__container{
+.FavoriteButtonContainerDetailPage .favoritesButton__container {
     position: static;
     transform: none;
 }
 
-.mainDescriptionContainer .descriptionContainer p br{
+.mainDescriptionContainer .descriptionContainer p br {
     content: "";
     margin: 20px;
     display: block;
@@ -139,6 +150,10 @@
         flex-direction: column;
         width: 100%;
         height: 100%;
+    }
+
+    #scrollingPartOneDetailContainer, #scrollingPlateformsAndLikeContainer { 
+        position: static;
     }
 
     .nameContainer {
