@@ -33,4 +33,8 @@ export class DetailGamePage extends Page {
 			this.children.initEvent();
 		});
 	}
+
+	unmount() {
+		this.children.destroyEvent();
+	}
 }

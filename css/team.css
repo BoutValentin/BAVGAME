@@ -22,6 +22,10 @@
     transition: all 0.3s ease;
 }
 
+.theOnlyTruth {
+    text-align: center;
+}
+
 .theOnlyTruth a, .theOnlyTruth a:visited {
     color: var(--main-font-color);
     -webkit-background-clip: text;
@@ -41,10 +45,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-}
-
-.hidden {
-    display: none;
 }
 
 .lesBossContainer {
@@ -132,4 +132,8 @@
         flex-direction: column;
         padding: 20px;
     }
+}
+
+.hidden {
+    display: none;
 }
