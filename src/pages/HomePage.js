@@ -86,11 +86,7 @@ export class HomePage extends Page {
 	handleScrollEvent() {
 		if (this.requestWasSend) return;
 		const element = document.documentElement;
-		if (
-			element.scrollHeight - element.scrollTop !== element.clientHeight + 1 &&
-			element.scrollHeight - element.scrollTop !== element.clientHeight - 1 &&
-			element.scrollHeight - element.scrollTop !== element.clientHeight
-		)
+		if (element.scrollHeight - element.scrollTop >= element.clientHeight + 444)
 			return;
 		const elementToInsert = document.querySelector('header').parentNode;
 		const template = document.createElement('template');

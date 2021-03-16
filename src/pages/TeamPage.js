@@ -15,7 +15,6 @@ export class TeamPage extends Page {
 			fetch('/team.html')
 				.then(rep => rep.text())
 				.then(html => {
-					console.log(html);
 					this.element.innerHTML = html;
 					this.cacheHtml = html;
 					this.initEvent();
