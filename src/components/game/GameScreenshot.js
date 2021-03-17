@@ -6,6 +6,7 @@ export class GameScreenshot extends Component {
 			'a',
 			[
 				{ name: 'class', value: `vignette ${classe}` },
+				{ name: 'target', value: '_blank' },
 				{ name: 'href', value: image },
 				{ name: 'id', value: `${id}-a` },
 			],

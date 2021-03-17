@@ -58,6 +58,11 @@
     border-radius: 25px;
 }
 
+.lesBossContainer a, .lesBossContainer a:visited {
+    text-decoration: none;
+    color: var(--main-font-color);
+}
+
 .imagesDesBoss {
     display: block;
     width: 200px;
