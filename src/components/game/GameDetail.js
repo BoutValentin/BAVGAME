@@ -153,10 +153,17 @@ export class GameDetail extends Component {
 	}
 
 	handleScroll() {
-		document.getElementById('scrollingPartOneDetailContainer').style.top =
-			window.scrollY + 'px';
-		document.getElementById('scrollingPlateformsAndLikeContainer').style.top =
-			window.scrollY + 'px';
+		if (
+			document.querySelector('.partOneDetailContainer').clientHeight -
+				document.querySelector('#scrollingPartOneDetailContainer')
+					.scrollHeight >=
+			window.scrollY
+		) {
+			document.getElementById('scrollingPartOneDetailContainer').style.top =
+				window.scrollY + 'px';
+			document.getElementById('scrollingPlateformsAndLikeContainer').style.top =
+				window.scrollY + 'px';
+		}
 	}
 
 	initEvent(object = this.saveComponents) {

@@ -16,6 +16,7 @@ export class FavoritesPage extends Page {
 
 	mount(element) {
 		super.mount(element);
+		this.element.innerHTML = '<h1>Loading...</h1>';
 		this.handleFavorisListener = this.handleFavorisListener.bind(this);
 		window.addEventListener('favoris', this.handleFavorisListener);
 		const arrayFavorites = Favorites.favorites;
@@ -23,12 +24,12 @@ export class FavoritesPage extends Page {
 		if (arrayFavorites.length == 0) {
 			this.attribute = { name: 'class', value: 'listEmptyFavorite' };
 			this.children = new EmptyFavoritesList();
+			this.pageTitle = this.p;
 			this.element.innerHTML = this.render();
 			this.addListenerReturnHomePage();
 			return;
 		}
 
-		this.element.innerHTML = 'Loading...';
 		this.gameResources.getManyById(arrayFavorites).then(games => {
 			const gamesCards = games.map(game => {
 				if (game.error) return new ErrorGameCard(game.error);

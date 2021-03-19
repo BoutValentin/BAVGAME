@@ -7,7 +7,7 @@ export class GameScreenshot extends Component {
 			[
 				{ name: 'class', value: `vignette ${classe}` },
 				{ name: 'target', value: '_blank' },
-				{ name: 'href', value: image },
+				{ name: 'href', value: image || '/images/pulp.gif' },
 				{ name: 'id', value: `${id}-a` },
 			],
 			[
@@ -15,7 +15,7 @@ export class GameScreenshot extends Component {
 					'img',
 					[
 						{ name: 'class', value: 'vignetteImage' },
-						{ name: 'src', value: image },
+						{ name: 'src', value: image || '/images/pulp.gif' },
 						{ name: 'id', value: `${id}-img` },
 					],
 					''

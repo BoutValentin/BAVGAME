@@ -11,7 +11,7 @@ export class TeamPage extends Page {
 	mount(element) {
 		super.mount(element);
 		if (!this.cacheHtml) {
-			this.element.innerHTML = 'Loading...';
+			this.element.innerHTML = '<h1>Loading...</h1>';
 			fetch('/team.html')
 				.then(rep => rep.text())
 				.then(html => {
