@@ -15,7 +15,7 @@ export class DetailGamePage extends Page {
 	mount(element) {
 		super.mount(element);
 		this.element.innerHTML = '<h1>Loading...</h1>';
-		this.pageTitle = 'Chargement...';
+		this.pageTitle = 'Loading...';
 
 		const path = window.location.pathname;
 		const slug = path.replace('/detail-', '');

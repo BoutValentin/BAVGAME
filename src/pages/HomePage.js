@@ -24,7 +24,7 @@ export class HomePage extends Page {
 			this.eventIsHandle = true;
 		}
 		super.mount(element);
-		this.element.innerHTML = 'Loading...';
+		this.element.innerHTML = '<h1>Loading...</h1>';
 		this.requestWasSend = true;
 		this.addResources().then(rep => {
 			this.requestWasSend = false;
