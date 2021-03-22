@@ -1,2 +1,8 @@
 /node_modules/
 /build/
+
+
+# Vim temp files
+*.swp
+*.swo
+

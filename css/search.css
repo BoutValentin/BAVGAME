@@ -41,6 +41,7 @@
     box-shadow: 0px 0px 12px 4px rgba(0,0,0,0.22);
     transition: all 0.3s ease;
 }
+
 .search-input__img-container:active {
     transform: scale(0.9);
 }
@@ -48,10 +49,12 @@
 .search-input__img-container:hover {
     transform: scale(1.15) rotate(-15deg);
 }
+
 .search-input__img-container > img {
     height: 15px;
     width: 15px;
 }
+
 .search-container {
 	width: 100%;
 	max-width: 80%;
@@ -87,13 +90,16 @@
 	align-items: center;
 	justify-content: space-around;
 }
+
 .select-container > select {
 	min-width: 200px;
 }
+
 .ordering-container {
     width: 100%;
     margin: 30px auto;
 }
+
 .ordering-container-filter {
     display: flex;
     flex-direction: row;
@@ -101,7 +107,6 @@
     justify-content: center;
     flex-wrap: wrap;
 }
-
 
 .sort-container {
 	display: flex;
@@ -149,5 +154,3 @@
 .metacritic-descending {
     background-color: var(--genre-platformer-2);
 }
-
-

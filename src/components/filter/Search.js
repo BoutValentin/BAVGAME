@@ -1,5 +1,5 @@
 import { AbstractFilter } from './AbstractFilter';
-import { Option } from './Option';
+
 export class Search extends AbstractFilter {
 	id;
 	timeout;

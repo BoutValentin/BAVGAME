@@ -2,7 +2,7 @@ import Router from './Router';
 
 window.onload = () => window.scrollTo(0, 0);
 
-window.addEventListener('scroll', e => {
+window.addEventListener('scroll', () => {
 	if (window.scrollY == 0) {
 		document.querySelector('header').classList.remove('scroolHeader');
 		return;
@@ -15,7 +15,6 @@ Router.initRouter(
 	document.querySelector('.pageContainer'),
 	document.querySelector('header')
 );
-//Event scrool et faire si width inferier;
 
 document.getElementById('hamburger-image').addEventListener('click', () => {
 	const extendMenu = document.querySelector('.header-container.extends');

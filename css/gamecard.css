@@ -25,6 +25,7 @@
     border-radius: 10px 10px 0 0;
     flex-shrink: 0;
 }
+
 .gameCard > .CardImageContainer > img {
     display: block;
     min-height: 100%;
@@ -32,6 +33,7 @@
     object-fit: fill;
     border-radius: 25px 25px 0 0;
 }
+
 .gameCard > .CardImageContainer > img[src='/images/pulp.gif'] {
     max-height: 230px;
 }
@@ -40,20 +42,24 @@
     width: 100%;
     margin: 5px 0px 15px 0px;
 }
+
 .gameCard__title {
     font-weight: 600;
     font-size: 1.1em;
 }
+
 .gamecard__separator__container {
     padding: 3px 15px;
     height: auto;
     width: 100%;
 }
+
 .gamecard__separator {
     border-radius: 35px;
     height: 3px;
     background-color: var(--main-accent-dark-color);
 }
+
 .date__container {
     margin: 10px 0px 10px 0px;
     width: 100%;
@@ -64,6 +70,7 @@
     min-height: 40px;
     width: 100%;
 }
+
 .gameCard__date__img {
     height: 28px;
     width: 28px;
@@ -97,14 +104,17 @@
     background-color: var(--main-accent-red-color);
 
 }
+
 .metacritic__container.medium__metacritic {
     background-color: var(--main-accent-color);
    
 }
+
 .metacritic__container.high_metacritic {
     background-color: var(--main-accent-green-color);
 
 }
+
 .favoritesButton__container {
     position: absolute;
     right: 10px;
@@ -112,6 +122,7 @@
     transform: translateY(50%);
     cursor: pointer;
 }
+
 .favoritesButton {
     height: 35px;
     width: 35px;

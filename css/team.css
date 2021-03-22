@@ -72,7 +72,6 @@
     animation: color-change 0.3s infinite;
 }
 
-
 .lesBossContainer:hover > .lesBoSurnom {
     animation: color-change 0.1s infinite;
     transition: all 1s ease;
@@ -96,7 +95,6 @@
     animation: color-change 0.3s infinite;
 }
 
-
 @keyframes color-change {
     0% { background-image: linear-gradient(to left,  indigo, blue, green, yellow, orange, red, violet); }
     14% {background-image: linear-gradient(to left, blue, green, yellow, orange, red, violet, indigo);}
@@ -114,6 +112,7 @@
     75% {transform: rotate(2700deg) scale(0.8);}
     100% {transform: rotate(3600deg) scale(1);}
 }
+
 .noteDesBG {
     height: 50px;
     width: 50px;

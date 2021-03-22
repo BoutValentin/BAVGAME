@@ -13,16 +13,6 @@ const MONTH = [
 	'Decembre',
 ];
 
-const Day = [
-	'Lundi',
-	'Mardi',
-	'Mercredi',
-	'Jeudi',
-	'Vendredi',
-	'Samedi',
-	'Dimanche',
-];
-
 export function toDisplayDate(released) {
 	if (!released) return '';
 	const date = new Date(released);

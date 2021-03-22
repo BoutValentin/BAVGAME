@@ -4,12 +4,12 @@ footer {
     border-top: 2px solid var(--main-font-color);
 }
 
-footer a{
+footer a {
     color: var(--main-font-color);
     text-decoration: none;
 }
 
-footer a:visited{
+footer a:visited {
     color: var(--main-font-color);
     text-decoration: none;
 }
@@ -59,7 +59,7 @@ footer a:visited{
         margin: 15px auto ;
     }
 
-    .footer-container .logo-container > img, .footer-container .iuristus-container > a > img   {
+    .footer-container .logo-container > img, .footer-container .iuristus-container > a > img {
         margin: auto 15px;
     }
 }
