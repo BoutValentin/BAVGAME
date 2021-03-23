@@ -2,21 +2,28 @@ import { Query } from '../query';
 import { Page } from './Page';
 import { GameResources } from '../resources';
 import { HomePageComponent } from '../components/homePage';
-import { Chargement, Component } from '../components/global';
+import { Chargement } from '../components/global';
 import { GameCard } from '../components/game';
 
 export class HomePage extends Page {
-	gameResources = new GameResources(new Query());
-	currentRessources = [[]];
-	lastPageFetch = 0;
-	asNextPage = false;
-	eventIsHandle = false;
-	requestWasSend = false;
+	gameResources;
+	currentRessources;
+	lastPageFetch;
+	asNextPage;
+	eventIsHandle;
+	requestWasSend;
+
 	constructor() {
 		super('HOME', 'homePage');
 		this.handleQueryChange = this.handleQueryChange.bind(this);
 		this.handleScrollEvent = this.handleScrollEvent.bind(this);
-	}
+	  	this.gameResources = new GameResources(new Query());
+	  	this.currentRessources = [[]];
+	  	this.lastPageFetch = 0;
+	  	this.asNextPage = false;
+	  	this.eventIsHandle = false;
+  		this.requestWasSend = false;
+  	}
 
 	mount(element) {
 		if (!this.eventIsHandle) {

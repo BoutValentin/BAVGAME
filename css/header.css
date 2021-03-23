@@ -11,26 +11,29 @@ header * {
     max-width: 100%;
 }
 
-header a{
+header a {
     color: var(--main-font-color);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-header a:hover{
+header a:hover {
     color: var(--main-font-color);
     text-decoration: none;
     transform: scale(1.1);
 }
+
 .scroolHeader {
     transition: all 0.3s ease;
     background-color: var(--main-bg-color-header);
     border-bottom: 2px solid var(--main-font-color);
 }
-header a:visited{
+
+header a:visited {
     color: var(--main-font-color);
     text-decoration: none;
 }
+
 .header-container {
     width: 100%;
     max-width: 1100px;
@@ -73,12 +76,12 @@ header a:visited{
     align-items: center;
     justify-content: space-around;
 }
-.header-container__links a{
+.header-container__links a {
     font-size: 19px;
     margin: auto 10px;
 }
 
-.header-container__links a{
+.header-container__links a {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -91,18 +94,18 @@ header a:visited{
     position: relative;
 }
 
-.header-container__links .active{
+.header-container__links .active {
     font-weight: 600;
 }
 
-.header-container__links a span{ 
+.header-container__links a span { 
     opacity: 0;
     display: none;
     animation: 0.5s ease 0s 1 reverse backwards appearSpan;
 
 }
 
-.header-container__links a.active span{
+.header-container__links a.active span {
     position: absolute;
     opacity: 0;
     display: block;
@@ -125,8 +128,6 @@ header a:visited{
     visibility: hidden;
     height: 0;
 }
-
-
 
 #hamburger-image {
     width: 35px;

@@ -1,5 +1,4 @@
 import { Component } from '../global';
-import { GameScreenshot } from './GameScreenshot';
 
 export class GamePlatform extends Component {
 	slugId;

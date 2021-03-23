@@ -24,7 +24,7 @@ export class GameResources extends Resources {
 	 */
 	async getOne(id) {
 		const game = await super.getOne(id, this.query.getStringQuery());
-		if (game.error) return game;
+    	if (game.error) return game;
 		const query = new Query();
 		query.addOneParameter('page_size', game.screenshots_count, true);
 		query.removeOneParameter('metacritic');

@@ -1,6 +1,5 @@
-import { Query } from '../../query';
 import { GenreResource } from '../../resources/GenreResources';
-import { OptionFilter, Search, Select } from '../filter';
+import { OptionFilter, Search } from '../filter';
 import { Component, P } from '../global';
 import { Div } from '../global/Div';
 import { sortResults } from '../../constants';

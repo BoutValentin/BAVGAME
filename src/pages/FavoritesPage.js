@@ -8,11 +8,12 @@ import Router from '../Router';
 import { Div, P } from '../components/global';
 
 export class FavoritesPage extends Page {
-	gameResources = new GameResources(new Query());
+	gameResources;
 
 	constructor() {
 		super('FAVORITES', 'favoritesPage');
-	}
+    	this.gameResources = new GameResources(new Query());
+  	}
 
 	mount(element) {
 		super.mount(element);

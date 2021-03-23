@@ -3,6 +3,7 @@ export const METACRITIC = '50,100';
 export const PAGE_SIZE = 20;
 export const DATE_RELEASE = '2020-01-01,';
 export const PAGE = 1;
+
 export class Query {
 	parameters;
 	/**
